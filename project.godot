@@ -22,6 +22,10 @@ test={
 "events": []
 }
 
+[physics]
+
+3d/default_gravity=0.0
+
 [xr]
 
 openxr/enabled=true

@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvohwkjgq3xic"]
+[gd_scene load_steps=3 format=3 uid="uid://dvohwkjgq3xic"]
 
+[ext_resource type="Script" path="res://XROrigin3D.gd" id="1_eslo5"]
 [ext_resource type="Script" path="res://controller.gd" id="2_yvr7v"]
 
 [node name="Player" type="Node3D"]
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 current = true
+script = ExtResource("1_eslo5")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 
@@ -16,3 +18,5 @@ script = ExtResource("2_yvr7v")
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"left_hand"
 script = ExtResource("2_yvr7v")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="XROrigin3D"]
