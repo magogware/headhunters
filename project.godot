@@ -8,10 +8,20 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "XRController3D",
+"class": &"XRController3DCustom",
+"language": &"GDScript",
+"path": "res://scripts/controller.gd"
+}]
+_global_script_class_icons={
+"XRController3DCustom": ""
+}
+
 [application]
 
 config/name="Headhunters"
-run/main_scene="res://proving_grounds.tscn"
+run/main_scene="res://zero_g_rocket_demo.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 

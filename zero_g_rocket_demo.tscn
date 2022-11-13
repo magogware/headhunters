@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://blto1byn0ibn6"]
+
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_1gnr1"]
+[ext_resource type="Script" path="res://scripts/origin.gd" id="2_6d41k"]
+[ext_resource type="Script" path="res://scripts/controller.gd" id="3_5npts"]
+[ext_resource type="Script" path="res://scripts/player_physics.gd" id="4_bjekk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1n3ip"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_1gnr1")
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793221, -2.23637)
+mesh = SubResource("BoxMesh_1n3ip")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.365851, 0.917136)
+mesh = SubResource("BoxMesh_1n3ip")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14463, 0.778939, -0.41202)
+mesh = SubResource("BoxMesh_1n3ip")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64033, 1.76893, -0.41202)
+mesh = SubResource("BoxMesh_1n3ip")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94337, 1.1871, -0.41202)
+mesh = SubResource("BoxMesh_1n3ip")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.932865, 2.88899, -0.41202)
+mesh = SubResource("BoxMesh_1n3ip")
+skeleton = NodePath("../..")
+
+[node name="Origin" type="XROrigin3D" parent="."]
+script = ExtResource("2_6d41k")
+
+[node name="Camera" type="XRCamera3D" parent="Origin"]
+
+[node name="RightHand" type="XRController3D" parent="Origin"]
+tracker = &"right_hand"
+script = ExtResource("3_5npts")
+
+[node name="LeftHand" type="XRController3D" parent="Origin"]
+tracker = &"left_hand"
+script = ExtResource("3_5npts")
+
+[node name="PlayerPhysics" type="RigidBody3D" parent="Origin"]
+mass = 80.0
+script = ExtResource("4_bjekk")
