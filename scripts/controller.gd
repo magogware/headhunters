@@ -10,4 +10,4 @@ var braking_force : Vector3
 
 func _physics_process(delta):
 	rocket_force = get_value(GRIP_ACTION) * ROCKET_SPEED * -global_transform.basis.z * delta
-	braking_force = get_value(B_BUTTON_ACTION) * -body.linear_velocity * delta
+	braking_force = get_value(B_BUTTON_ACTION) * -body.linear_vel * delta
